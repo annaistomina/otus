@@ -1,9 +1,11 @@
 public class Sortbuf {
     public static void main(String[] args) {
-        int[] arr = new int[100000000];
+        int[] arr = new int[1000];
         for (int i = 0; i < arr.length; i++) {    // массив с рандомным набором чисел
-            arr[i] = (int) (Math.random() * 100000000);
+            arr[i] = (int) (Math.random() * 1000000000);
         }
+        long x = System.currentTimeMillis();
+        long z = System.nanoTime();
         boolean isSorted = false;
         {    // сортировка пузырьком
             int buf;
@@ -22,8 +24,8 @@ public class Sortbuf {
             }
             long l = System.currentTimeMillis();
             long k = System.nanoTime();
-            System.out.println("bufSort = " + l + "ms");
-            System.out.println("bufSort = " + k + "nano");
+            System.out.println("bufSort = " + (l - x) + "ms");
+            System.out.println("bufSort = " + (k - z) + "nano");
 
         }
         System.out.println();
