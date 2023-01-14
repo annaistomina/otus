@@ -1,14 +1,15 @@
 import java.util.Scanner;
 
 public class ConsoleUserInput implements UserInput {
+    private UserOutput userOutput = new ConsoleUserOutput();
 
     @Override
     public int read() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ваш ответ: ");
+        userOutput.print("Ваш ответ: ");
         int x;
         while (!scanner.hasNextInt()) {
-            System.out.println("Ошибка! Введите число");
+            userOutput.print("Ошибка! Введите число");
             scanner.next();
         }
         x = scanner.nextInt();
