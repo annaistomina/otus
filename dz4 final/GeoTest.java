@@ -1,16 +1,16 @@
 public class GeoTest {
-    Question[] questions;
+    private final Question[] questions;
     private int correctCount = 0;
-    int wrongCount = 0;
-    UserOutput userOutput;
+    private int wrongCount = 0;
+    private final UserOutput userOutput;
 
-    public GeoTest(Question[] questions, UserOutput userOutput) {
+    private GeoTest(Question[] questions, UserOutput userOutput) {
         this.userOutput = userOutput;
         this.questions = questions;
     }
 
 
-    public void runTest() {
+    private void runTest() {
         for (Question qs : questions) {
             if (qs.ask()) {
                 correctCount++;
@@ -43,12 +43,7 @@ public class GeoTest {
                         "3 Стамбул",
                         "4 Измир"},
                 2);
-        UserOutput userOutput = new ConsoleUserOutput() {
-            @Override
-            public void print(String massage) {
-                System.out.println(massage);
-            }
-        };
+        UserOutput userOutput = new ConsoleUserOutput();
             GeoTest geoTest = new GeoTest(questions, userOutput);
         geoTest.runTest();
     }
