@@ -1,8 +1,8 @@
 public class GeoTest {
-    private final Question[] questions;
+    private Question[] questions;
     private int correctCount = 0;
     private int wrongCount = 0;
-    private final UserOutput userOutput;
+    private UserOutput userOutput;
 
     private GeoTest(Question[] questions, UserOutput userOutput) {
         this.userOutput = userOutput;

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ConsoleUserInput implements UserInput {
-    private final UserOutput userOutput = new ConsoleUserOutput();
+    private  UserOutput userOutput = new ConsoleUserOutput();
 
     @Override
     public int read() {
