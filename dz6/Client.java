@@ -1,23 +1,34 @@
 import java.util.*;
 
 public class Client {
-      public String name;
+      private String name;
       private int age;
-    public int account;
+    public List<Account>accounts;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client client)) return false;
+        return age == client.age && name.equals(client.name);
+    }
 
-    Client(String name, int age, int account) {
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+    @Override
+    public String toString() {
+        String text = "";
+        text += "клиент: " + this.name;
+        text += ", возраст: " + this.age;
+       // text += ", номер счета:" + this.accounts;
+        return text;
+    }
+    public Client(String name, int age, List<Account>accounts) {
         this.name = name;
         this.age = age;
-        this.account = account;
+        this.accounts = accounts;
     }
-   /* public String toString() {
-        String text = "";
-        text += "Клиент: " + this.name;
-        text += ", возраст: " + this.age;
-        text += ", номер счета:" + this.account;
-        return text;
-    }*/
 
 }
 
